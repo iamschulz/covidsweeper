@@ -57,6 +57,7 @@ const emit = defineEmits(["click", "rclick"]);
 	overflow: hidden;
 	display: flex;
 	place-items: center;
+	margin: 0;
 }
 
 span {

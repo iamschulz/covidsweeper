@@ -38,12 +38,11 @@ const restartEmit = defineEmits(["restart"]);
 .restartDialog {
 	position: absolute;
 	top: 0;
-	left: 0;
-	right: 0;
 	bottom: 0;
 	display: block;
 	width: fit-content;
 	height: fit-content;
+	margin: auto;
 	background: white;
 	padding: 1rem;
 	border: 3px solid black;
