@@ -63,8 +63,7 @@ const fetchData = async () => {
 	const data = await fetch("https://api.corona-zahlen.org/germany").then(
 		(response) => response.json()
 	);
-	//incidence.value = Math.round(data.weekIncidence);
-	incidence.value = 10;
+	incidence.value = Math.round(data.weekIncidence);
 	lastFetched.value = new Date().getTime();
 	window.setTimeout(() => {
 		loading.value = false;
