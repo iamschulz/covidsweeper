@@ -163,9 +163,6 @@ const gameOver = (index: number) => {
 	grid-template-columns: repeat(v-bind(width), 1fr);
 	grid-template-rows: repeat(v-bind(height), 1fr);
 	gap: 1px;
-	--boardSize: min(80vw, 80vh);
-	width: var(--boardSize);
-	height: var(--boardSize);
 	margin: auto;
 }
 </style>
