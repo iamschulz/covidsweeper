@@ -134,6 +134,10 @@ const handleLeftClick = (payload: Payload) => {
 
 	revealArea(index);
 	fields.value[index].isRevealed = true;
+
+	if (fields.value.every((field) => field.isRevealed || field.isFlagged)) {
+		boardEmit("gameover", "win");
+	}
 };
 
 const handleRightClick = (payload: Payload) => {
@@ -146,6 +150,10 @@ const handleRightClick = (payload: Payload) => {
 	if (!fields.value[index].isMine) {
 		boardEmit("falseflag");
 	}
+
+	if (fields.value.every((field) => field.isRevealed || field.isFlagged)) {
+		boardEmit("gameover", "win");
+	}
 };
 
 const gameOver = (index: number) => {
@@ -153,7 +161,7 @@ const gameOver = (index: number) => {
 	fields.value.forEach((field) => {
 		field.isRevealed = true;
 	});
-	boardEmit("gameover");
+	boardEmit("gameover", "lose");
 };
 </script>
 

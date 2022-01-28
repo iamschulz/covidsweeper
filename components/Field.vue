@@ -51,9 +51,12 @@ const emit = defineEmits(["click", "rclick"]);
 .field {
 	cursor: pointer;
 	border: 0;
+	width: 2rem;
 	aspect-ratio: 1;
-	min-width: 2rem;
 	background-color: rgb(240, 240, 240);
+	overflow: hidden;
+	display: flex;
+	place-items: center;
 }
 
 span {

@@ -13,7 +13,7 @@
 				@unscore="points--"
 				@falseflag="falseFlags++"
 				@unfalseflag="falseFlags--"
-				@gameover="() => onGameover()"
+				@gameover="onGameOver"
 			/>
 			<div class="loading" v-if="loading">
 				<LoadingIcon />
@@ -22,6 +22,7 @@
 				:open="gameover"
 				:points="points"
 				:falseFlags="falseFlags"
+				:winner="win"
 				@restart="onRestart"
 			/>
 		</main>
@@ -33,18 +34,20 @@ const incidence = ref(0);
 const points = ref(0);
 const falseFlags = ref(0);
 const gameover = ref(false);
+const win = ref(false);
 const loading = ref(true);
 const lastFetched = ref<number | null>(null);
-
-const onGameover = () => {
-	gameover.value = true;
-};
 
 const onRestart = () => {
 	gameover.value = false;
 	points.value = 0;
 	falseFlags.value = 0;
 	fetchData();
+};
+
+const onGameOver = (condition) => {
+	win.value = condition === "win";
+	gameover.value = true;
 };
 
 const fetchData = async () => {
@@ -60,9 +63,12 @@ const fetchData = async () => {
 	const data = await fetch("https://api.corona-zahlen.org/germany").then(
 		(response) => response.json()
 	);
-	incidence.value = Math.round(data.weekIncidence);
+	//incidence.value = Math.round(data.weekIncidence);
+	incidence.value = 10;
 	lastFetched.value = new Date().getTime();
-	loading.value = false;
+	window.setTimeout(() => {
+		loading.value = false;
+	}, 0);
 };
 
 onMounted(() => {
