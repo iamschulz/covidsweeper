@@ -32,6 +32,8 @@ const restartEmit = defineEmits(["restart"]);
 .restartDialog {
 	top: 0;
 	bottom: 0;
+	background: white;
+	border: 3px solid black;
 }
 
 button {
