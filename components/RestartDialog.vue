@@ -7,7 +7,7 @@
 			{{ points - falseFlags }} Infektionen verhindert.
 			<span v-if="!winner">Den Rest hat Corona durchseucht.</span>
 		</p>
-		<button @click="() => restartEmit('restart')">Neuer versuch</button>
+		<button @click="() => restartEmit('restart')">Neuer Versuch</button>
 	</dialog>
 </template>
 
