@@ -1,5 +1,5 @@
 <template>
-	<dialog class="restartDialog" :open="open">
+	<dialog class="restartDialog" :open="open || null">
 		<p>
 			Du hast {{ points }} Menschen geimpft und dabei
 			{{ points - falseFlags }} Infektionen verhindert. Den Rest hat
