@@ -88,7 +88,6 @@ body {
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
-	max-width: 50vw;
 	margin: auto;
 }
 
