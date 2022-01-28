@@ -60,6 +60,8 @@ const emit = defineEmits(["click", "rclick"]);
 }
 
 span {
+	display: block;
+	width: 100%;
 	font-size: 1rem;
 	font-weight: bold;
 }
